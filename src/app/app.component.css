@@ -1,0 +1,14 @@
+header {
+    height: 100px;
+    width: 100%;
+}
+
+footer {
+    height: 100px;
+    width: 100%;
+    background: #424242;
+}
+
+body {
+    height: calc(100vh - 200px);
+}
