@@ -11,7 +11,7 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { BooksComponent } from './components/books/books.component';
 import { CardBookComponent } from './components/card-book/card-book.component';
 import { NewBookComponent } from './components/new-book/new-book.component';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +24,7 @@ import { NewBookComponent } from './components/new-book/new-book.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     APP_ROUTING
   ],
   providers: [],

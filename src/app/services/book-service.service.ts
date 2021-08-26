@@ -20,8 +20,20 @@ export class BookServiceService {
     return this.http.get<Book>(`${this.apiServeUrl}/book/${id}`)
   }
 
+  getAuthor(author : string){
+    return this.http.get<Book[]>(`${this.apiServeUrl}/author/${author}`)
+  }
+
+  getPublisher(publisher: string){
+    return this.http.get<Book[]>(`${this.apiServeUrl}/publisher/${publisher}`)
+  }
+
   deleteBook(id : number){
     return this.http.delete<void>(`${this.apiServeUrl}/${id}`)
+  }
+
+  saveBook( book : Book){
+    return this.http.post<Book>(`${this.apiServeUrl}/new`, book)
   }
 
 
