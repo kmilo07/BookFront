@@ -1,0 +1,12 @@
+<h1>Buscar: <small> {{ buscar }}</small></h1>
+<hr>
+<div class="animated fadeIn fast" *ngIf="books.length==0">
+    <div class="col-md-12">
+        <div class="alert alert-info" role="alert">
+            No existe resultados para: {{buscar}}
+        </div>
+    </div>
+</div>
+
+<app-card-book [items]="books">
+</app-card-book>

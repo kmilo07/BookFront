@@ -18,7 +18,6 @@ export class BooksComponent{
       this.books = data;
       console.log(data);
     })
-
   }
 
 }

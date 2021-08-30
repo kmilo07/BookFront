@@ -1,10 +1,10 @@
 <div *ngFor="let item of items" class="container">
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title"> {{item.noun}}</h5>
-            <a (click)="onViewBook(item.isbnId)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">more</a>
-            <div class="right">
-                <a (click)="onViewBook(item.isbnId)" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+    <div class="space block">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"> {{item.noun}}</h5>
+                <a (click)="onViewBook(item.isbnId)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">more</a>
+                <a (click)="onViewBook(item.isbnId)" class="btn btn-danger right" data-bs-toggle="modal" data-bs-target="#deleteModal">
                     <img src="/assets/icons8-borrar-para-siempre-96.png" alt="" width="20px">
                 </a>
             </div>

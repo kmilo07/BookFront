@@ -10,6 +10,5 @@ footer {
 }
 
 body {
-    height: calc(100vh - 200px);
-    padding-top: 15px;
+    min-height: calc(100vh - 200px);
 }

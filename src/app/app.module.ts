@@ -12,6 +12,7 @@ import { BooksComponent } from './components/books/books.component';
 import { CardBookComponent } from './components/card-book/card-book.component';
 import { NewBookComponent } from './components/new-book/new-book.component';
 import { FormsModule } from '@angular/forms';
+import { FindBookComponent } from './components/find-book/find-book.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     BooksComponent,
     CardBookComponent,
-    NewBookComponent
+    NewBookComponent,
+    FindBookComponent
   ],
   imports: [
     BrowserModule,

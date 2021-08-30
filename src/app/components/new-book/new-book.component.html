@@ -22,6 +22,6 @@
             <input type="text " class="form-control " ngModel name="gender" required>
         </div>
 
-        <button type="button " class="btn btn-primary center">Submit</button>
+        <button [disabled]="addForm.invalid" type="button " class="btn btn-primary center">Create</button>
     </form>
 </div>

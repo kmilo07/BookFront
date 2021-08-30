@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { BookServiceService } from '../../services/book-service.service';
 import { Book } from '../../book';
-
+import Swal from 'sweetalert2';
+import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-card-book',
   templateUrl: './card-book.component.html',
@@ -23,15 +24,25 @@ export class CardBookComponent implements OnInit {
     this.bookService.getBook(id).subscribe
     ((data : any) => {
       this.book = data;
-      console.log(data);
     })
   }
 
   onDelete(id : number){
     this.bookService.deleteBook(id)
     .subscribe((response : void) => {
-      console.log(response);
-    })
-  }
+      Swal.fire({
+        icon: 'success',
+        title: 'Deleted',
+        text: `The book ${this.book.noun} was removed!`
+      })
+    },(error: HttpErrorResponse) => {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: `${error}`
+        
+      })
+    }
+  )}
 
 }
