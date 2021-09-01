@@ -4,6 +4,7 @@ import { BookServiceService } from '../../services/book-service.service';
 import { Book } from '../../book';
 import Swal from 'sweetalert2';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-new-book',
   templateUrl: './new-book.component.html',
@@ -12,7 +13,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class NewBookComponent implements OnInit {
   book !: Book;
 
-  constructor(private bookService : BookServiceService) { }
+  constructor(private bookService : BookServiceService, 
+    private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -24,7 +26,7 @@ export class NewBookComponent implements OnInit {
         this.book = response;
         
         addForm.reset();
-        
+        this.router.navigate(['/']);
         Swal.fire({
           icon: 'success',
           title: 'Created',

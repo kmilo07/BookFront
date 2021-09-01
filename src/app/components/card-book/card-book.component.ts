@@ -3,6 +3,7 @@ import { BookServiceService } from '../../services/book-service.service';
 import { Book } from '../../book';
 import Swal from 'sweetalert2';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-card-book',
   templateUrl: './card-book.component.html',
@@ -14,7 +15,8 @@ export class CardBookComponent implements OnInit {
   book !: Book;
 
   constructor(
-    private bookService : BookServiceService
+    private bookService : BookServiceService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -35,6 +37,8 @@ export class CardBookComponent implements OnInit {
         title: 'Deleted',
         text: `The book ${this.book.noun} was removed!`
       })
+
+      this.router.navigate(['/']);
     },(error: HttpErrorResponse) => {
       Swal.fire({
         icon: 'error',
